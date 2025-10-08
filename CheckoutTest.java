@@ -77,4 +77,18 @@ public class CheckoutTest {
         //assert
         assertEquals("£2.05", result);
     }
+    
+    @Test
+    public void testReturnPriceIfCaseSensitive(){
+        //arrange
+        Checkout checkout = new Checkout();
+        List<String> items = new ArrayList<>();
+        items.add("ORANGE");
+        items.add("ApPle");
+
+        //act
+        String result = checkout.calculateFruits(items);
+        //assert
+        assertEquals("£0.85", result);
+    }
 }
