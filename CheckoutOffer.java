@@ -24,7 +24,10 @@ public class CheckoutOffer {
         // Apply 2-for-1 offer on apples
         int payableApples = (appleCount / 2) + (appleCount % 2);
 
-        double total = (payableApples * APPLE_PRICE) + (orangeCount * ORANGE_PRICE);
+        // Apply 3-for-2 offer on oranges
+        int payableOranges = ((orangeCount / 3) * 2) + (orangeCount % 3);
+
+        double total = (payableApples * APPLE_PRICE) + (payableOranges * ORANGE_PRICE);
 
         return "£" + String.format("%.2f", total);
     }
