@@ -77,4 +77,19 @@ public class CheckoutOfferTest {
         // assert
         assertEquals("£1.20", result);
     }
+
+    @Test
+    public void testSingleOrange_NoOfferApplied(){
+        // arrange
+        CheckoutOffer checkout = new CheckoutOffer();
+        List<String> items = new ArrayList<>();
+        items.add("Orange");
+
+        // act
+        String result = checkout.calculateFruits(items);
+
+        // assert
+        assertEquals("£0.25", result);
+    }
+
 }
