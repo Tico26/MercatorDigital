@@ -26,5 +26,16 @@ public class CheckoutTest {
         //Assert
         assertEquals("£0.00", result);
     }
-    
+        @Test
+    public void testInvalidItems(){
+        //arrange
+        Checkout checkout = new Checkout();
+        List<String> items = new ArrayList<>();
+        items.add("banana");
+
+        //act
+        String result = checkout.calculateFruits(items);
+        //assert
+        assertEquals("£0.00", result);
+    }
 }
