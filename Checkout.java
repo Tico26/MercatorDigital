@@ -1,18 +1,23 @@
 import java.util.List;
 
 public class Checkout {
+    private static final double APPLE_PRICE = 0.60;
+    private static final double ORANGE_PRICE = 0.25;
 
     public String calculateFruits(List<String> items){
         if (items == null || items.isEmpty()) {
             return "£0.00";
         }
+        double total = 0.0;
+
         for(int i = 0; i < items.size(); i++){
             if(items.get(i).equals("Apple")){
-                return "£0.60";
+                total += APPLE_PRICE;
             }else if(items.get(i).equals("Orange")){
-                return "£0.25";
+                total += ORANGE_PRICE;
             }
         }
-        return "£0.00";
+        String price = "£"+String.format("%.2f", total);
+        return price;
     }
 }
