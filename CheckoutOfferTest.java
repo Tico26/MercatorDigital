@@ -37,8 +37,23 @@ public class CheckoutOfferTest {
     @Test
     public void testSingleApple_NoOfferApplied(){
         // arrange
-        Checkout checkout = new Checkout();
+        CheckoutOffer checkout = new CheckoutOffer();
         List<String> items = new ArrayList<>();
+        items.add("Apple");
+
+        // act
+        String result = checkout.calculateFruits(items);
+
+        // assert
+        assertEquals("£0.60", result);
+    }
+
+    @Test
+    public void testTwoApples_TwoForOneOfferApplied(){
+        // arrange
+        CheckoutOffer checkout = new CheckoutOffer();
+        List<String> items = new ArrayList<>();
+        items.add("Apple");
         items.add("Apple");
 
         // act
