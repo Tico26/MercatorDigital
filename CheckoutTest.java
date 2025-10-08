@@ -26,7 +26,7 @@ public class CheckoutTest {
         //Assert
         assertEquals("£0.00", result);
     }
-        @Test
+    @Test
     public void testInvalidItems(){
         //arrange
         Checkout checkout = new Checkout();
@@ -61,5 +61,20 @@ public class CheckoutTest {
         String result = checkout.calculateFruits(items);
         //assert
         assertEquals("£0.25", result);
+    }
+
+    @Test
+    public void testReturnPriceIfApplesAndOranges(){
+        //arrange
+        Checkout checkout = new Checkout();
+        List<String> items = new ArrayList<>();
+        items.add("Orange");
+        items.add("Apple");
+        items.add("Apple");
+        items.add("Apple");
+        //act
+        String result = checkout.calculateFruits(items);
+        //assert
+        assertEquals("£2.05", result);
     }
 }
