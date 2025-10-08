@@ -1,0 +1,11 @@
+import java.util.List;
+
+public class CheckoutOffer {
+    public String calculateFruits(List<String> items){
+        if (items == null || items.isEmpty()) {
+            return "£0.00";
+        }
+        
+        return "£0.00";
+    }
+}
