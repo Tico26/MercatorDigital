@@ -11,9 +11,10 @@ public class Checkout {
         double total = 0.0;
 
         for(int i = 0; i < items.size(); i++){
-            if(items.get(i).equals("Apple")){
+            items.set(i, items.get(i).toLowerCase());
+            if(items.get(i).equals("apple")){
                 total += APPLE_PRICE;
-            }else if(items.get(i).equals("Orange")){
+            }else if(items.get(i).equals("orange")){
                 total += ORANGE_PRICE;
             }
         }
