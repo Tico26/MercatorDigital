@@ -50,4 +50,16 @@ public class CheckoutTest {
         //assert
         assertEquals("£0.60", result);
     }
+
+    @Test
+    public void testReturnPriceIfOneOrange(){
+        //arrange
+        Checkout checkout = new Checkout();
+        List<String> items = new ArrayList<>();
+        items.add("Orange");
+        //act
+        String result = checkout.calculateFruits(items);
+        //assert
+        assertEquals("£0.25", result);
+    }
 }
