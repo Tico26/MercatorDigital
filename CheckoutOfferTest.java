@@ -62,4 +62,19 @@ public class CheckoutOfferTest {
         // assert
         assertEquals("£0.60", result);
     }
+
+    @Test
+    public void TestThreeApples_PayForTwo(){
+        //arrange
+        CheckoutOffer checkout = new CheckoutOffer();
+        List<String> items = new ArrayList<>();
+        items.add("Apple");
+        items.add("Apple");
+        items.add("Apple");
+        // act
+        String result = checkout.calculateFruits(items);
+
+        // assert
+        assertEquals("£1.20", result);
+    }
 }
