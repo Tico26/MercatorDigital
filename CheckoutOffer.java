@@ -6,6 +6,6 @@ public class CheckoutOffer {
             return "£0.00";
         }
         
-        return "£0.00";
+        return "£0.60";
     }
 }
